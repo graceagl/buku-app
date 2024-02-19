@@ -1,0 +1,353 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Aoboshi+One&family=Dela+Gothic+One&family=Encode+Sans+Semi+Expanded:wght@600&family=Julius+Sans+One&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Poppins:ital,wght@0,200;0,300;1,200&family=Quattrocento&family=Quicksand:wght@300&display=swap');
+body {
+     background: #fff;
+     margin: 0;
+     height: 190vh;
+     /* Make sure the body takes up the full height of the viewport */
+    background-image: url(../images/bg-bulat.png);
+    background-size: cover;   
+    background-repeat: no-repeat;
+
+ }
+
+.logo img {
+    height: 50px;
+    width: 80px;
+    border-right: 2px solid black;
+    padding-right: 25px;
+    padding-left: 25px;
+    padding-top: 5px;
+}
+
+ul {
+    list-style-type: none;
+    display: flex;
+    gap: 65px;
+    flex-direction: row;
+    text-decoration: none;
+    margin-right: auto  ;
+}
+
+ul li a {
+    text-decoration: none;
+    color: rgb(13, 13, 13);
+}
+
+.navbar {
+    display: flex;    
+    border-bottom:2px solid black;
+    font-family: Poppins;
+    font-weight: 800;
+    justify-content: space-between;
+    align-items: center;
+}
+
+li {
+    border-right: 2px solid black;
+    height: 10px;
+    
+}
+
+.home {
+    border-right: 2px solid black;
+    padding-top: 18px;
+    padding-right: 50px;
+    padding-left: 20px;
+    height: 30px;
+    margin-top: 1px ;
+}
+
+.popular {
+    border-right: 2px solid black;
+    padding-top: 18px;
+    padding-right: 50px;
+    height: 30px;
+        margin-top: 1px;
+    padding-left: -90px ;
+}
+
+.categori {
+    border-right:2px solid black;
+    padding-top: 18px;
+    padding-right: 50px;
+    height: 30px;
+    margin-top: 1px;
+    padding-left: -90px;
+}
+
+.login {
+    
+    margin-left: 990px;
+    gap: 90px;
+    color: black;
+    padding-right: 29px;
+}
+
+.login a {
+    text-decoration: none;
+    color: black;
+}
+
+.satu {
+    padding-right: 20px;
+}
+.dua {
+    background-color: #C1DAFF;
+    padding: 10px;
+    border-radius: 25px;
+    border: 3px solid black ;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.right {
+    padding-top: 9px;
+}
+.regist {
+    
+    background-color: #C1DAFF;
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid black;
+}
+
+.seksion2{
+    padding: 0 9%;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+}
+
+.description {
+    display: flex;
+    align-items: center;
+}
+
+img {
+    padding-top: 40px;
+    height: 270px;
+}
+
+.best {
+    font-family: 'Aoboshi One';
+}
+
+.description {
+    font-family: 'Dela Gothic One';
+    font-size: 90px;
+    height: 180px;
+    padding-top: 30px;
+    flex: 1 1 42rem;
+}
+
+.teks1 {
+    line-height: 10px;
+}
+.teks2 {
+    line-height: 10px;
+}
+
+.panah {
+    padding-top: 80px;
+    width: 550px;
+    height: 50px;
+}
+
+.seksion2 .row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.seksion2 .row .kontent {
+    flex: 1 1 42rem;
+}
+
+.seksion2 .row .books-slider {
+    flex: 1 1 42rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.seksion2 .row .books-slider a img {
+    height: 25rem;
+}
+
+.seksion2 .row .books-slider a:hover img {
+    transform: scale(.9);
+}
+
+/* .seksion2 .row .books-slider .stand { */
+    /* width: 20%; */
+    /* margin-top: 25rem;
+} */
+
+.stand {
+    /* width: 20%; */
+    margin-top: -7rem !important;
+}
+
+.row .book-slider {
+    flex: 1 1 42rem;
+    text-align: center;
+    margin-top: 6rem;
+}
+.row .book-slider a img {
+    /* height: 20rem; */
+}
+.row .book-slider a:hover img {
+    transform: scale(.9);
+}
+
+
+.kotak_kategori{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.imgk{
+    height: 120px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.imgk img {
+    border-radius: 9px;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.5);
+    padding-top: 9px;
+    background-color: rgb(255, 255, 255);
+    width: 90px;
+    height: 95px;
+    padding: 40px 30px;
+}
+
+.imgk p{
+    font-family: 'Quicksand';
+    font-size: 22px;
+}
+
+.seksion3{
+    margin-top: 3rem;
+}
+
+.seksion4 .lorem {
+    font-family: 'Quicksand';
+    font-size: 20px;
+    margin-top: 12rem;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+} 
+
+.seksion5 {
+height: 60vh;
+}
+
+.recomendation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.imgkk {
+    height: 120px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.imgkk img {
+    
+    width: 310px;
+    height: 295px;
+    margin-top: 30rem;
+   
+}
+
+.imgkk p {
+    font-family: 'Quicksand';
+    font-size: 22px;
+}
+
+.imgkk .filo {
+    margin-top: 30rem;
+    width: 200px;
+}
+
+.imgkk .lor{
+font-size: 18px;
+}
+
+
+.seksion6 {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.supanova {
+    width: 90rem;
+    background: linear-gradient(to right, #E4F2FF, #FFFFFF);
+    border: 1px solid #D1D6FF;
+    border-radius: 7px;
+    box-shadow:0px 3px 10px rgba(0, 0, 0, 0.5) ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30rem;
+}
+
+.quotes img {
+    width: 33rem;
+    height: 46rem;
+    position: relative;
+    top: 35px;
+}
+
+.quote_tx p {
+    font-family: 'Quattrocento';
+    font-size: 30px;
+        padding-right: 90px;
+
+}
+
+.btn {
+    padding: 5px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-family: 'Quicksand';
+    border: 1px solid rgb(167, 167, 167) ;
+    color: black;
+    background-color: #EDEDED;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+.seksion7 {
+    height: 110vh;
+    background-size: cover;
+    background-image: url(../images/POPULAR\ \(1\).jpg);
+}
+
+.popular-text {
+    padding-top: 210px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Quicksand';
+    font-size: 25px;
+}
+
+.popular-text p {
+    font-size: 20px;
+    padding-top: 20px;
+}

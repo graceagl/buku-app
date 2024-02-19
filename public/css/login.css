@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Aoboshi+One&family=Dela+Gothic+One&family=Encode+Sans+Semi+Expanded:wght@600&family=Julius+Sans+One&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Poppins:ital,wght@0,200;0,300;1,200&family=Quattrocento&family=Quicksand:wght@300&display=swap');
+
+body {
+    background: #fff;
+    margin: 0;
+    height: 90vh;
+    /* Make sure the body takes up the full height of the viewport */
+    background-image: url(../images/REGISTER.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.wrap {
+    display: flex;
+    height: 65vh;
+    background-color: rgba(217, 217, 217, 0.243);
+    box-shadow: 1px 6px 9px rgba(0, 0, 0, 0.5);
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.main {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.card1 {
+    padding: 160px;
+    width: 390px;
+    border-radius: 50px;
+    text-align: center;
+    background-color: #E2F0FE;
+    box-shadow: 1px 6px 9px rgba(0, 0, 0, 0.5);
+
+}
+
+.card1 h1 {
+    font-size: 65px;
+    margin-top: 30px;
+    padding-bottom: 60px;
+    font-family: 'Dela Gothic One';
+}
+
+.card1 p {
+    font-size: 30px;
+    font-family: 'Poppins';
+    font-weight: 180px;
+}
+
+.card1 a {
+    /* height: 190px;    */
+    margin-top: 90px;
+    padding: 2px 40px 2px;
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Poppins';
+    color: black;
+    box-shadow: 0px 4px 9px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    text-decoration: none;
+    background-color: #EFF0F0;
+}
+
+.card {
+    font-family: 'Poppins';
+    font-size: 25px;
+    width: 490px;
+    margin: 100px;
+    border: none;
+}
+
+.card label {
+    font-weight: 90px;
+    margin-top: 150px;
+}
+
+
+.card-header {
+    font-size: 30px;
+    padding-bottom: 69px;
+}
+
+#email, #name,#password {
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid black;
+    height: 25px;
+    width: 20rem;
+    font-size: 25px;
+}
+
+.card-body button {
+    margin-top: 75px;
+    width: 160px;
+    border-radius: 25px;
+    height: 42px;
+    font-family: 'poppins';
+    font-size: 28px;
+    box-shadow: 0px 4px 9px rgba(223, 202, 202, 0.5);
+    border-radius: 5px;
+    background-color: #76c9f231;
+
+}
