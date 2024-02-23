@@ -27,14 +27,44 @@
                 
                 <ul class="link">
                     <li class="home"><a href=" ">Home</a></li>
-                    <li  class="popular"><a href="">Popular</a></li>
+                    <li  class="populer"><a href="">Popular</a></li>
                     <li class="categori"><a href=" ">Category</a></li>
                 </ul>
                 
-                <div class="login">
-                    <a href="{{ route ('login') }}" class="satu">Login</a>
-                    <a href="{{ route ('register') }}"  class="dua">Register</a>
-                </div>
+                <ul class="navbar-nav ms-auto login">
+                        <!-- Authentication Links -->
+                        @guest
+                            @if (Route::has('login'))
+                                <li class="nav-item">
+                                    <a class="nav-link satu" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                </li>
+                            @endif
+
+                            @if (Route::has('register'))
+                                <li class="nav-item">
+                                    <a class="nav-link dua" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                </li>
+                            @endif
+                        @else
+                            <li class="nav-item dropdown">
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    {{ Auth::user()->name }}
+                                </a>
+
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </li>
+                        @endguest
+                    </ul>
             </div>  
         </div>
         
@@ -175,9 +205,11 @@
             </div>
         </div>
     </section>
+    
+    {{-- start --}}
 
-    <div class="seksion7">
-        <div class="popular-text">
+    <section class="seksion7">
+        <div class="popular">
             <div class="teks-pop">
 
                 <h3>Popular</h3>
@@ -185,11 +217,34 @@
                     Lorem ipsum dolor sit amet consectetur,<br>
                     adipisicing elit. Consequatur, laudantium iste?
                 </p>
-            </div>
+            </div>  
+            
+           <div class="slide hi-slide">
+                <div class="hi-prev"></div>
+                <div class="hi-next"></div>
+                <ul>
+                    <li><img src="{{ asset('images/buku1.png') }}" alt=""></li>
+                    <li><img src="{{ asset('images/buku1.png') }}" alt=""></li>
+                    <li><img src="{{ asset('images/buku1.png') }}" alt=""></li>
+                    <li><img src="{{ asset('images/buku1.png') }}" alt=""></li>
+                    <li><img src="{{ asset('images/buku1.png') }}" alt=""></li>
+                    <li><img src="{{ asset('images/buku1.png') }}" alt=""></li>
+                    <li><img src="{{ asset('images/buku1.png') }}" alt=""></li>
+                    <li><img src="{{ asset('images/buku1.png') }}" alt=""></li>
+                </ul>
+            </div>  
         </div>
-    </div>
+    </section>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="{{ asset ('js/main.js') }}"> </script>
+    <script src="{{ asset ('js/main.js') }}"></script>
+
+    <script src="{{ url('https://code.jquery.com/jquery-3.7.1.js') }}"></script>
+
+    <script src="{{ 'js/jquery.hislide.js' }}"></script>
+
+    <script>
+        $('.slide').hiSlide();
+    </script>
 </body>
 </html>

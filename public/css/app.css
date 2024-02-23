@@ -26,7 +26,7 @@ ul {
     gap: 65px;
     flex-direction: row;
     text-decoration: none;
-    margin-right: auto  ;
+    margin-right: auto;
 }
 
 ul li a {
@@ -43,11 +43,7 @@ ul li a {
     align-items: center;
 }
 
-li {
-    border-right: 2px solid black;
-    height: 10px;
-    
-}
+
 
 .home {
     border-right: 2px solid black;
@@ -58,7 +54,7 @@ li {
     margin-top: 1px ;
 }
 
-.popular {
+.populer {
     border-right: 2px solid black;
     padding-top: 18px;
     padding-right: 50px;
@@ -79,7 +75,7 @@ li {
 .login {
     
     margin-left: 990px;
-    gap: 90px;
+    gap: 20px;
     color: black;
     padding-right: 29px;
 }
@@ -194,9 +190,7 @@ img {
     text-align: center;
     margin-top: 6rem;
 }
-.row .book-slider a img {
-    /* height: 20rem; */
-}
+
 .row .book-slider a:hover img {
     transform: scale(.9);
 }
@@ -338,7 +332,7 @@ font-size: 18px;
     background-image: url(../images/POPULAR\ \(1\).jpg);
 }
 
-.popular-text {
+.popular {
     padding-top: 210px;
     text-align: center;
     align-items: center;
@@ -347,7 +341,100 @@ font-size: 18px;
     font-size: 25px;
 }
 
-.popular-text p {
+.popular p {
     font-size: 20px;
     padding-top: 20px;
+}
+
+
+.tranding-slide {
+    width: 37rem;
+    height: 42rem;
+    position: relative;
+}
+
+.tranding-slide .tranding-slide-img img {
+    width: 28rem;
+    height: 36rem;
+    border-radius: 2rem;
+}
+
+.hi-slide {
+    position: relative;
+    width: 754px;
+    height: 292px;
+    border-radius: 50px;
+    margin: 115px auto 0;
+}
+
+.hi-slide .hi-next,
+.hi-slide .hi-prev{
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    margin-top: -20px;
+    border-radius: 50px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    transition: all 0.7s;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.h1-slide .hi-next:hover,
+.h1-slide .hi-prev:hover {
+    opacity: 10;
+    background-color: white;
+}
+
+.h1-slide .hi-prev {
+    left: 60px;
+}
+
+.hi-slide .hi-prev::before{
+    content: '<';
+}
+
+.hi-slide .hi-next{
+    right: -60px;
+}
+
+.hi-slide .hi-next::before{
+    content: '>';
+}
+
+.hi-slide > ul {
+    list-style: none;
+    position: relative;
+    width: 754px;
+    height: 292px;
+    margin: 0;
+    padding: 0;
+}
+
+
+.hi-slide > ul > li {
+    overflow: hidden;
+    position: absolute;
+    z-index: 0;
+    left: 377px;
+    top: 147px;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    /* border: 3px solid white; */
+    cursor: pointer;
+    /* background-color: #333; */
+}
+
+
+.hi-slide > ul > li > img {
+    width: 130%;
+    height: 98%;
+    background-position: center;
 }
