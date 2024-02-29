@@ -1,8 +1,9 @@
 body {
     margin: 0;
-    height: 100vh;
+    height: 100%;
     background-image: linear-gradient(to bottom, rgba(210, 244, 255, 0.935), rgb(255, 255, 255));
-font-family: "Montserrat", sans-serif;}
+    font-family: "Montserrat", sans-serif;
+}
 
 /* Google Font Import - Poppins */
 @import url('https://fonts.googleapis.com/css2?family=Aoboshi+One&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Dela+Gothic+One&family=Encode+Sans+Semi+Expanded:wght@600&family=Julius+Sans+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Poppins:ital,wght@0,200;0,300;1,200&family=Quattrocento&family=Quicksand:wght@300&display=swap');
@@ -16,7 +17,7 @@ font-family: "Montserrat", sans-serif;}
 :root {
     /* ===== Colors ===== */
     --body-color: #E4E9F7;
-    --sidebar-color: #FFF;
+    --sidebar-color: #ffffff82;
     --primary-color: #695CFE;
     --primary-color-light: #F6F5FF;
     --toggle-color: #DDD;
@@ -55,7 +56,7 @@ body.dark {
     top: 0;
     left: 0;
     height: 100%;
-    width: 200px;
+    width: 250px;
     padding: 10px 14px;
     background: var(--sidebar-color);
     transition: var(--tran-05);
@@ -193,6 +194,7 @@ body.dark .sidebar header .toggle {
     background-color: var(--primary-color-light);
     color: var(--text-color);
     border-radius: 6px;
+    /* background-color: re; */
     font-size: 17px;
     font-weight: 500;
     transition: var(--tran-05);
@@ -304,10 +306,10 @@ body.dark .switch::before {
 }
 
 .home {
-    position: relative;
+    position: absolute;
     top: 0;
     top: 0;
-    left: 200px;
+    left: 250px;
     height: 100vh;
     width: calc(100% - 250px);
     /* background-color: var(--body-color); */
@@ -331,7 +333,7 @@ body.dark .home .text {
     color: var(--text-color);
 }
 
- 
+
 
 .contain {
     padding: 30px;
@@ -396,24 +398,24 @@ table {
 }
 
 th {
-text-align: center;
-padding: 20px;
+    text-align: center;
+    padding: 20px;
     color: rgb(80, 80, 80);
 }
 
-td{
+td {
     text-align: center;
 }
 
 .add {
-  
-  text-align: end;
-  margin: 0 110px 50px 0;
+
+    text-align: end;
+    margin: 0 110px 50px 0;
 }
 
 .add a {
     border-radius: 8px;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     padding: 12px;
     text-decoration: none;
     color: black;
@@ -427,4 +429,83 @@ td {
     padding: 40px;
 
     font-size: 15px;
+}
+
+.hello{
+    
+    padding: 30px;
+    margin-left: 170px;
+    /* margin-top: 100px;         */
+    font-family: 'Dela Gothic One',sans-serif;
+    font-size: 30px;
+    gap: 10rem;
+}
+
+.hello  p {
+    font-family: 'Poppins';
+    font-size: 15px;
+}
+
+.kolekxi {
+    width: 300px;
+    background-color: #fefefe;
+    display: flex;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    padding: 15px;
+    margin-top: 50px;
+
+}
+
+.utama {
+    padding-left: 200px;
+    gap:115px;
+    display: flex;
+}
+
+.name {
+    padding-left: 15px;
+    font-family: 'Poppins';
+    font-size: 15px;
+    padding-top: 15px;
+    /* background-color: #ff1f1f; */
+}
+
+.name p{
+    font-size: 10px;
+    margin: 5px;
+}
+
+.name a{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #F76B56;
+    padding :5px;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.name .a{
+    /* padding:15px; */
+    margin-bottom: 5px;
+    color: #F6F5FF;
+    background-color: #42BB4E;
+}
+
+.name .b{
+    color: #F76B56;
+    background-color: transparent;
+}
+
+.a:hover{
+    background-color: #1c4e21;
+}
+
+
+.b:hover {
+    background-color: #C1DAFF;
+    
 }

@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Aoboshi+One&family=Dela+Gothic+One&family=Encode+Sans+Semi+Expanded:wght@600&family=Julius+Sans+One&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Poppins:ital,wght@0,200;0,300;1,200&family=Quattrocento&family=Quicksand:wght@300&display=swap');
+
+body {
+    background: #fff;
+    margin: 0;
+    height: 100vh;
+    /* Make sure the body takes up the full height of the viewport */
+    background-image: url(../images/bg-bulat.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.main{
+    padding-top: 30vh;
+    width: 55rem;
+    margin-left: 35rem;
+}
+
+.conatiner {
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.234);
+    box-shadow: 1px 6px 9px rgba(0, 0, 0, 0.5);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 10px;
+    justify-content: center;
+}
+
+.conatiner h1 {
+    font-family: 'Dela Gothic One';
+    /* background-color: rebeccapurple; */
+    flex-direction: column;
+    
+}
+
+
+
+
+
+.kiri {
+    gap: 2rem;
+    /* display: flex; */
+
+}
+
+.kiriu {
+    display: flex;
+}
+
+.datakiri {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Poppins';
+    font-weight: bold;
+}
+
+.datakanan {
+    font-family: 'Poppins';
+    display: flex;
+    flex-direction: column;
+    margin-left: 3rem;
+}
+
+.kanan {
+    margin-left: 5rem;
+    display: flex;
+    gap:5rem;
+}
+
+.kanan .foto img {
+    width: 300px;
+}
+
+
+
+.kanan a{
+    display: flex;
+    width: 30px ;
+    align-items: center;
+    padding: 10px 40px;
+    color: black;
+    text-decoration: none;
+    border-radius: 8px;
+    background-color: #fff;
+
+}
+
+.buttonedit {
+    display: flex;
+    justify-content: end;
+}

@@ -6,6 +6,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <link rel="stylesheet" href="{{ asset('/css/swiper-bundle.min.css') }}">
         <link rel="stylesheet" href="{{ asset ('/public/js/main.js')}}">
+         <link rel="stylesheet" href="{{ asset ('/public/js/faq.js')}}">
         <link rel="stylesheet" href="{{ asset ('/css/app.css') }}">
         <link rel="stylesheet" href="{{ asset ('/css/https://unpkg.com/swiper@8/swiper-bundle.min.css') }}">
         <script  src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -90,7 +91,7 @@
                  <h1>r All</h1>
             </div>
         </div>
-        <div class="arrow">
+        <div class="arrowed">
             <img class="panah" src="{{ asset('images/arrow.png') }}" alt="">
         </div>
             </div>        
@@ -236,6 +237,91 @@
         </div>
     </section>
 
+    <section class="faq-section">
+        <h1 class="tittle">Frequenly Asked Question</h1>
+        <ul class="faq">
+            <li>
+                <div class="q">
+                    <span class="arrow"></span>
+                    <span>How do i replay?</span>
+                </div>
+                <div class="a">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto id unde veniam possimus nesciunt laborum dolor repellendus cum consectetur iure.                        
+                    </p>
+                </div>
+            </li>
+
+            <li>
+                <div class="q">
+                    <span class="arrow"></span>
+                    <span>How do i replay?</span>
+                </div>
+                <div class="a">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto id unde veniam possimus nesciunt laborum dolor repellendus cum consectetur iure.                        
+                    </p>
+                </div>
+            </li>
+
+            <li>
+                <div class="q">
+                    <span class="arrow"></span>
+                    <span>How do i replay?</span>
+                </div>
+                <div class="a">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto id unde veniam possimus nesciunt laborum dolor repellendus cum consectetur iure.                        
+                    </p>
+                </div>
+            </li>
+
+            <li>
+                <div class="q">
+                    <span class="arrow"></span>
+                    <span>How do i replay?</span>
+                </div>
+                <div class="a">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto id unde veniam possimus nesciunt laborum dolor repellendus cum consectetur iure.                        
+                    </p>
+                </div>
+            </li>
+        </ul>
+    </section>
+
+    <section class="footer">
+        <div class="foot">
+            <div class="bufuter">
+                <img src="{{ asset('/images/butuferr.png') }}"  alt="">
+            </div>
+        <div class="real-foot">
+                <img src="{{ asset('/images/logo-footer.png') }}" alt="">
+        </div>
+        <div class="thank">
+            <div class="re">
+                <p>Thank you for visiting! We appreciate your time <br>
+                and invite you to keep reading to discover <br>
+                more about us.</p>
+                    <div class="more">
+                    <a href=""><img src="{{ asset('/images/fb.png') }}" alt=""></a>        
+                    <a href=""><img src="{{ asset('/images/telcum.png') }}" alt=""></a>        
+                <a href=""><img src="{{ asset('/images/ig.png') }}" alt=""></a>        
+                    </div>        
+            </div>
+            
+        
+        <div class="copy-right">
+            <p>© 2024 — Finally Copyright Grace     </p>
+        </div>
+            
+        </div>
+        </div>
+    </section>
+
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="{{ asset ('js/main.js') }}"></script>
 
@@ -246,5 +332,24 @@
     <script>
         $('.slide').hiSlide();
     </script>
+
+  <script>
+     const q = document.querySelectorAll('.q');
+    const a = document.querySelectorAll('.a');
+    const arr = document.querySelectorAll('.arrow');
+
+//Select all 'q' elements
+for(let i = 0; i < q.length; i++) {
+//Add click event to all 'q' elements
+q[i].addEventListener('click', () => { 
+a[i].classList.toggle('a-opened');
+arr[i]. classList.toggle('arrow-rotated');
+
+});
+
+};
+  </script>
+
+
 </body>
 </html>

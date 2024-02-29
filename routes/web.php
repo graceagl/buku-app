@@ -40,3 +40,18 @@ Route::put('/update/{id}',[App\Http\Controllers\BookController::class, 'update']
 Route::get('/edit/{id}', [App\Http\Controllers\BookController::class, 'edit'])->name('edit');
 
 Route::delete('/delete/{id}', [App\Http\Controllers\BookController::class, 'delete'])->name('delete');
+
+Route::get('/datau', [App\Http\Controllers\BookController::class, 'user'])->name('datau');
+
+Route::get('/datap', [App\Http\Controllers\BookController::class, 'petugas'])->name('datap');
+
+Route::get('/adddatap', [App\Http\Controllers\BookController::class, 'addpetugas'])->name('adddatap');
+
+Route::post('/prosesadddatap', [App\Http\Controllers\BookController::class, 'create'])->name('prosesadddatap');
+
+Route::get('/catalog', [App\Http\Controllers\BookController::class, 'kolek'])->name('catalog');
+
+Route::get('/detail', [App\Http\Controllers\BookController::class, 'jelax'])->name('detail');
+
+Route::get('/profil', [App\Http\Controllers\BookController::class, 'bio'])->name('profil');
+

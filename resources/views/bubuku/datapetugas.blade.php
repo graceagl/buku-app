@@ -7,12 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!----======== CSS ======== -->
-    <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/table_book.css') }}">
     
     <!----===== Boxicons CSS ===== -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     
     <!--<title>Dashboard Sidebar Menu</title>--> 
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
     
@@ -115,79 +117,53 @@
 
     <section class="home">
         <div class="contain">
-            <h1>Dashboard</h1>
+            <h1>Staff</h1>
             <input type="search" class="search" placeholder="Search here">
             <div class="dashi">
                 <div class="login">
-                    <ul class="navbar-nav ms-auto login">
-                        <!-- Authentication Links -->
-                        @guest
-                            @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link satu" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
-                            @endif
-
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link dua" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
+                   <img src="{{ asset('images/iconamoon_profile-bold.png') }}" alt="">
                 </div>
             </div>
         </div>  
         
+       
+
+        <table>
+                
+            <tr class="tabel">
+                <th>No.</th>
+                <th>Nama</th>
+                <th>E-mail</th>
+                <th>Tanggal</th>
+                
+                <th>Action</th>
+            </tr>
+            @foreach ($petugas as $tampil)
+
+            <tr>
+                <td>{{ $loop->iteration }}</td>
+                <td>{{ $tampil->name }}</td>
+                <td>{{ $tampil->email }}</td>
+                <td>{{ $tampil->created_at }}</td>
+                
+                <td style="display: flex; gap:50px; justify-content:center;">
+                 
+                    <form action="/delete/{{ $tampil ->id }}" method="post">
+                        @csrf
+                        @method("DELETE")
+                        <button type="submit" value=""  style="background-color: transparent; border:none;"><i class="bi bi-trash" style="font-size :20px;">
+                        </i></button>
+                    </form>
+
+                </td>
+            </tr>
+            @endforeach
+        </table>
+        
 
 
-        </div>
-
-        <div class="dashibord">
-        <div class="total-books">
-            <img src="{{ asset('images/Vector.png') }}" alt="">
-                <h1>1101</h1>
-                <p>Total Books</p>
-                <a href="#">More</a>
-        </div>
-
-         <div class="total-books">
-            <img src="{{ asset('images/Frame.png') }}" alt="">
-                <h1>1101</h1>
-                <p>Total Staff</p>
-                 <a href="#">More</a>
-        </div>
-
-         <div class="total-books">
-            <img src="{{ asset('images/Frame (1).png') }}" alt="">
-                <h1>1101</h1>
-                <p>Total User</p>
-                 <a href="#">More</a>
-         </div>
-
-        </div>
-        </div>
-
-    </section>
-
+        
+    </section>  
     <script>
         const body = document.querySelector('body'),
       sidebar = body.querySelector('nav'),
