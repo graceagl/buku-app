@@ -21,11 +21,11 @@
 <body>
     
     <div class="main">
-    <form action="/addbuku" method="post">
+    <form action="{{route('addbuku')}}" method="post">
         @csrf 
         <div class="container">
         <h1>Add Book</h1>
-        <input type="file" class="upload_hide" id="upload_costum" multiple>
+        <input type="file" class="upload_hide" name="gambar" id="upload_costum" multiple>
         <label for="upload_costum"  class="upload_label">
             <div class="image">
                 <img src="" alt="">
@@ -71,7 +71,7 @@
         <div class="forin">
             <textarea name="dec" id="dec"></textarea>    
             <br>
-            <a href="">Submit</a>
+            <button type="submit">Submit</button>
         </div> 
     </div>
         

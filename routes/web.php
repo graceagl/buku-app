@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,13 +29,13 @@ Route::get('/dashboard', [App\Http\Controllers\BookController::class, 'index'])-
 Route::get('/buku', [App\Http\Controllers\BookController::class, 'tablte'])->name('buku');
 
 //Menampilkan Form
-Route::get('/tambah', [App\Http\Controllers\BookController::class, 'createbuk']) -> name('tambah');
+Route::get('/tambah', [App\Http\Controllers\BookController::class, 'createbuk'])->name('tambah');
 
 //Proses Form
 Route::post('/addbuku', [App\Http\Controllers\BookController::class, 'add'])->name('addbuku');
 
 //Proses edit
-Route::put('/update/{id}',[App\Http\Controllers\BookController::class, 'update']) -> name('update');
+Route::put('/update/{id}', [App\Http\Controllers\BookController::class, 'update'])->name('update');
 
 //Menampilkan form edit
 Route::get('/edit/{id}', [App\Http\Controllers\BookController::class, 'edit'])->name('edit');
@@ -51,7 +52,6 @@ Route::post('/prosesadddatap', [App\Http\Controllers\BookController::class, 'cre
 
 Route::get('/catalog', [App\Http\Controllers\BookController::class, 'kolek'])->name('catalog');
 
-Route::get('/detail', [App\Http\Controllers\BookController::class, 'jelax'])->name('detail');
+Route::get('/detail/{id}', [App\Http\Controllers\BookController::class, 'jelax'])->name('detail');
 
 Route::get('/profil', [App\Http\Controllers\BookController::class, 'bio'])->name('profil');
-

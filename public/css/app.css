@@ -1,5 +1,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Aoboshi+One&family=Dela+Gothic+One&family=Encode+Sans+Semi+Expanded:wght@600&family=Julius+Sans+One&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Poppins:ital,wght@0,200;0,300;1,200&family=Quattrocento&family=Quicksand:wght@300&display=swap');
+* {
+    scroll-behavior: smooth;
+}
+
 body {
      background: #fff;
      margin: 0;

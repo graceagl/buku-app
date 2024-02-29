@@ -6,36 +6,41 @@ use Illuminate\Http\Request;
 use App\Models\Book;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+
 class BookController extends Controller
 {
-    public function index(){
-        return view('bubuku.dashboard'); 
+    public function index()
+    {
+        return view('bubuku.dashboard');
     }
 
     //menamilkan data buku
-    public function tablte () {
+    public function tablte()
+    {
         $show = Book::all();
-        return view ('bubuku.table_book', compact('show'));
+        return view('bubuku.table_book', compact('show'));
     }
 
     //menamilkan form add buku
-    public function createbuk (){
-        return view ('bubuku.addbook');
+    public function createbuk()
+    {
+        return view('bubuku.addbook');
     }
 
-    
+
 
     //untuk proses penambahan data
-    public function add (Request $request){
+    public function add(Request $request)
+    {
         $show = new Book;
-        $show -> gambar = $request -> input ('gambar');
-        $show -> judul = $request -> input ('judul');
-        $show -> penulis = $request -> input ('penulis');
-        $show -> penerbit = $request -> input ('penerbit');
-        $show -> tahun_penerbit = $request -> input ('thn');
+        $show->gambar = $request->input('gambar');
+        $show->judul = $request->input('judul');
+        $show->penulis = $request->input('penulis');
+        $show->penerbit = $request->input('penerbit');
+        $show->tahun_penerbit = $request->input('thn');
 
-        $show -> save();
-        return redirect ('/buku');
+        $show->save();
+        return redirect('/buku');
     }
 
     public function edit($id)
@@ -45,7 +50,7 @@ class BookController extends Controller
     }
 
     //untuk proses update
-    public function update(Request $request,$id)
+    public function update(Request $request, $id)
     {
         $show = Book::find($id);
         $show->gambar = $request->input('gambar');
@@ -58,9 +63,10 @@ class BookController extends Controller
         return redirect('/buku');
     }
 
-    public function delete($id ){
+    public function delete($id)
+    {
         $show = Book::find($id);
-        $show -> delete();
+        $show->delete();
 
         return redirect('/buku');
     }
@@ -93,7 +99,7 @@ class BookController extends Controller
      */
     public function create(Request $request)
     {
-            $petugas = User::create([
+        $petugas = User::create([
             'name' => $request['name'],
             'email' => $request['email'],
             'password' => Hash::make($request['password']),
@@ -106,12 +112,14 @@ class BookController extends Controller
 
     public function kolek()
     {
-        return view('bubuku.catalog');
+        $buku = Book::all();
+        return view('bubuku.catalog', compact('buku'));
     }
 
-    public function jelax()
+    public function jelax($id)
     {
-        return view('bubuku.detail');
+        $show = Book::find($id);
+        return view('bubuku.detail', compact('show'));
     }
 
     public function bio()
@@ -119,5 +127,3 @@ class BookController extends Controller
         return view('bubuku.profil');
     }
 }
-
-
