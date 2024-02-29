@@ -52,6 +52,8 @@ Route::post('/prosesadddatap', [App\Http\Controllers\BookController::class, 'cre
 
 Route::get('/catalog', [App\Http\Controllers\BookController::class, 'kolek'])->name('catalog');
 
-Route::get('/detail/{id}', [App\Http\Controllers\BookController::class, 'jelax'])->name('detail');
+Route::get('/detail/{id}', [App\Http\Controllers\BookController::class, 'jelax'])->name('detail
+
+');
 
 Route::get('/profil', [App\Http\Controllers\BookController::class, 'bio'])->name('profil');
