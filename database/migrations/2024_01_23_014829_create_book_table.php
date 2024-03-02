@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('penulis');
             $table->string('penerbit');
             $table->integer('tahun_penerbit');
+            $table->string('dec');
+
             $table->timestamps();
         });
     }

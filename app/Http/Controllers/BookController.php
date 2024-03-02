@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\simpan;
 use Illuminate\Http\Request;
 use App\Models\Book;
 use App\Models\User;
@@ -38,16 +39,14 @@ class BookController extends Controller
         $show->penulis = $request->input('penulis');
         $show->penerbit = $request->input('penerbit');
         $show->tahun_penerbit = $request->input('thn');
-
+        $show->dec = $request->input('dec');
         $show->save();
         return redirect('/buku');
     }
 
-    public function edit($id)
-    {
-        $show = Book::find($id);
-        return view('bubuku.update', compact('show'));
-    }
+ 
+    
+
 
     //untuk proses update
     public function update(Request $request, $id)
@@ -62,6 +61,24 @@ class BookController extends Controller
         $show->save();
         return redirect('/buku');
     }
+
+
+    public function renew(Request $request, $id)
+    {
+       $editp = User::find($id)->update([
+        'name'=> $request['name'],
+        'username'=> $request['username'],
+        'alamat'=> $request['alamat'],
+        'email'=> $request['email'],
+
+       ]);
+
+    //    $editp->save();
+       return redirect('/profil/{id}');
+    }
+
+
+
 
     public function delete($id)
     {
@@ -99,14 +116,16 @@ class BookController extends Controller
      */
     public function create(Request $request)
     {
-        $petugas = User::create([
+        $petugas = new User([
             'name' => $request['name'],
             'email' => $request['email'],
             'password' => Hash::make($request['password']),
             'role' => $request['role'],
         ]);
 
-        return redirect('/bubuku.datapetugas');
+        $petugas->save();
+
+        return redirect()->route('datap');
     }
 
 
@@ -118,12 +137,50 @@ class BookController extends Controller
 
     public function jelax($id)
     {
-        $show = Book::find($id);
-        return view('bubuku.detail', compact('show'));
+        $b = Book::find($id);
+        return view('bubuku.detail', compact('b'));
     }
 
     public function bio()
     {
         return view('bubuku.profil');
     }
+
+    public function koleku()
+    {
+        $buku = Book::all();
+        return view('bubuku.koleku', compact('buku'));
+    }
+
+    public function editp($id)
+    {   
+        $c = User::find($id);
+        return view('bubuku.editprofil');
+    }
+
+
+
+    public function store($id){
+        $book = Book::find($id);
+        
+        $user = auth()->user();
+
+        $existingBookmark = simpan::where('book_id', $book->id)
+            ->where('user_id', $user->id)
+            ->first();
+
+        if ($existingBookmark) {
+            $existingBookmark->delete();
+            return back();
+        } else {
+            $bookmark = new simpan();
+            $bookmark->book_id = $book->id;
+            $bookmark->user_id = $user->id;
+            $bookmark->save();
+
+            return back();
+        }
+    }
+
+
 }

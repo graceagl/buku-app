@@ -73,18 +73,18 @@
                     </li> --}}
 
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="/kolekuk">
                             <i class='bx bx-archive-in icon'></i>
-                            <span class="text nav-text">Analytics</span>
+                            <span class="text nav-text">Collection</span>
                         </a>
                     </li>
 
-                    <li class="nav-link">
+                    {{-- <li class="nav-link">
                         <a href="#">
                             <i class='bx bx-heart icon'></i>
                             <span class="text nav-text">Likes</span>
                         </a>
-                    </li>
+                    </li> --}}
 
                     {{-- <li class="nav-link">
                         <a href="#">
@@ -120,7 +120,7 @@
         </div>
 
     </nav>
-    <section class="home">
+    {{-- <section class="home"> --}}
         <div class="contain">
             <a href="/catalog"><i class="bi bi-arrow-left"></i> Back</a>
             <input type="search" class="search" placeholder="Search here">
@@ -139,16 +139,20 @@
                 <img src="{{ asset('/images')}}/{{ $b->gambar }}" alt="" class="mmg">
                 <div class="garid">
                     <div class="de">
-                        <h3>Ikigai : The Japanese <br>
-                            Secret to a Long and <br>
-                            Happy Life </h3>
-                        <p>Grace Angelika, 2005 <br> Second Choice <br> 5.0 Ratings </p>
+                        <h3>{{ $b->judul }}</h3>
+                        <p>{{ $b->penulis }}<br> {{ $b->penerbit }} <br> 5.0 Ratings </p>
 
                     </div>
                     <div class="borrow">
 
                         <a href="">Borrow</a>
-                        <i class="bi bi-box2-heart-fill"></i>
+                        <form action="/simpan/{{$b->id}}" method="post"  >
+                            @csrf
+                            <button type="submit" class="btn">
+                                <i class="bi bi-box2-heart-fill"></i>
+                            </button>
+
+                        </form>
                     </div>
                     <hr>
                 </div>
@@ -159,16 +163,13 @@
                 <div class="dek">
                     <div class="dex">
                         <h5>Descrpition</h5>
-                        <p>Steve Krug is a usability consultant who has more than 30 years of experience as a user advocate for companies like Apple, Netscape, AOL, Lexus, and others. Based in part on the success of his first book, Don't Make Me Think, he has become a highly sought-after speaker on usability design.
-                        </p>
+
+                        <p>{{ $b->dec }}</p>
                     </div>
+                    <br>
+                    <textarea name="coment" id="coment" cols="30" rows="10"> Comentar</textarea>
                     <div class="Book-detail">
-                        <h5>Book Detail</h5>
-                        <p>Steve Krug is a usability consultant who has more than 30 years of experience as a user advocate for companies like Apple, Netscape, AOL, Lexus, and others. Based in part on the success of his first book, Don't Make Me Think, he has become a highly sought-after speaker on usability design.
-                            Steve Krug is a usability consultant who has more than 30 years of experience as a user advocate for companies like Apple, Netscape, AOL, Lexus, and others. Based in part on the success of his first book, Don't Make Me Think, he has become a highly sought-after speaker on usability design.
-                            Steve Krug is a usability consultant who has more than 30 years of experience as a user advocate for companies like Apple, Netscape, AOL, Lexus, and others. Based in part on the success of his first book, Don't Make Me Think, he has become a highly sought-after speaker on usability design.
-                            Steve Krug is a usability consultant who has more than 30 years of experience as a user advocate for companies like Apple, Netscape, AOL, Lexus, and others. Based in part on the success of his first book, Don't Make Me Think, he has become a highly sought-after speaker on usability design.
-                        </p>
+                        
                     </div>
 
                 </div>

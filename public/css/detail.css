@@ -353,6 +353,18 @@ body.dark .home .text {
     gap: 10rem;
 }
 
+
+.contain a{
+    text-decoration: none;
+    color: #18191a;
+    margin-bottom: 2rem;
+    display: flex;
+        align-items: center;
+        justify-content: space-around;
+        gap: 1rem;
+}
+
+
 .main {
     display: flex;
     justify-content: center;
@@ -367,34 +379,37 @@ body.dark .home .text {
     border-radius: 7px;
     box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.5);       
     height: 90vh;
-    margin-top: 455px;
+    margin-top: 400px;
 }
 
 .cover {
     display: flex;
     /* align-items: center; */
-    margin-top: -345px;
-    margin-left: 80px;
+    margin-top: -25rem;
+    margin-left: 8rem;
     /* justify-content: center; */
 }
 
 .cover img {
-    /* width: 33rem; */
-    height:35rem;
+    width: 23rem;
+    height:32rem;
     position: relative;
+    margin: 2rem;
+    /* margin-top: 5rem; */
 }
 
 .de {
-    margin-top: 5rem;
+    margin-left: 2rem;
+    margin-top: 12rem;
     font-family: 'Poppins';
-    margin-bottom: 3rem;
+    /* margin-bottom: 3rem; */
     
 }
 
 .borrow a {
     display: flex;
     flex-direction: column;
-border-radius: 5px;
+    border-radius: 5px;
     justify-content: end;
     align-items: end;
     width: 110px;
@@ -412,19 +427,50 @@ border-radius: 5px;
     margin: 15px;
     justify-content: end;
     align-items: center;
-
     width: 44rem;
     padding: 5px 15px;
     font-size: 23px;
     color: white;
 }
 
-i{
-    color: #18191a;
+.borrow button {
+    background-color: transparent;
+    border-color: transparent;
+    /* width: 5rem;     */
 }
 
+
+
+
+
+
+i{
+    color: #18191a;
+    /* width: 16rem; */
+        font-size: 30px;
+
+}
+
+.btn::after {
+    background-color: rgba(95, 255, 255, 0.822);
+}
+
+
+/* .bi-box2-heart-fill {
+    color: #b2badc;
+}
+
+.bi-box2-heart-fill::after {
+        color: #7cc0eb;
+}  */
+
+
+
+
+
 hr {
-    border: 1px solid rgb(72, 72, 72);
+    width: 50rem;
+    border: 1px solid rgba(20, 20, 20, 0.535);
 
 }
 

@@ -1,10 +1,26 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+
+    <title>Document</title> --}}
+    <!doctype html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>{{ config('app.name', 'Laravel') }}</title>
+
+    <!-- Fonts -->    <link rel="dns-prefetch" href="//fonts.bunny.net">
+
     <link rel="stylesheet" href="{{ asset('/css/swiper-bundle.min.css') }}">
     <link rel="stylesheet" href="{{ asset ('/public/js/main.js')}}">
     <link rel="stylesheet" href="{{ asset ('/public/js/faq.js')}}">
@@ -13,8 +29,10 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
-    <title>Document</title>
+    {{-- <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet"> --}}
+    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous"> --}}
+    <!-- Scripts -->
+    {{-- @vite(['resources/sass/app.scss', 'resources/js/app.js']) --}}
 </head>
 
 <body>
@@ -27,9 +45,9 @@
 
 
                 <ul class="link">
-                    <li class="home"><a href=" ">Home</a></li>
-                    <li class="populer"><a href="">Popular</a></li>
-                    <li class="categori"><a href=" ">Category</a></li>
+                    <li class="home"><a href="/homepage">Home</a></li>
+                    <li class="categori"><a href="#kategori">Category</a></li>
+                    <li class="populer"><a href="#populer">Popular</a></li>
                 </ul>
 
                 <ul class="navbar-nav ms-auto login">
@@ -53,6 +71,15 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                            @auth 
+                                @if (Auth::user()->role==='admin'||Auth::user()->role==='petugas')
+                                   <a href="/dashboard">Dashboard || </a>
+                                @else
+                                    <a href="/profil/{{ Auth::user()->id }}">
+                                        Profil ||
+                                    </a>
+                                @endif
+                                @endauth
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
@@ -96,12 +123,12 @@
             </div>
             <div class="swiper book-slider">
                 <div class="swiper-wrapper">
-                    <a href="" class="swiper-slide"><img src="images/buku1.png" alt=""></a>
-                    <a href="" class="swiper-slide"><img src="images/buku1.png" alt=""></a>
-                    <a href="" class="swiper-slide"><img src="images/buku1.png" alt=""></a>
-                    <a href="" class="swiper-slide"><img src="images/buku1.png" alt=""></a>
-                    <a href="" class="swiper-slide"><img src="images/buku1.png" alt=""></a>
-                    <a href="" class="swiper-slide"><img src="images/buku1.png" alt=""></a>
+                    <a href="" class="swiper-slide"><img src="images/bukubaru4.png" alt=""></a>
+                    <a href="" class="swiper-slide"><img src="images/bukubaru3.png" alt=""></a>
+                    <a href="" class="swiper-slide"><img src="images/bukubaru4.png" alt=""></a>
+                    <a href="" class="swiper-slide"><img src="images/bukubaru2.png" alt=""></a>
+                    <a href="" class="swiper-slide"><img src="images/bukubaru1.png" alt=""></a>
+                    {{-- <a href="" class="swiper-slide"><img src="images/bukubaru2.png" alt=""></a> --}}
                 </div>
                 <img src="{{ asset ('images/standbook.png') }}" alt="" class="stand">
             </div>
@@ -110,27 +137,27 @@
 
     </section>
 
-    <section class="seksion3">
+    <section class="seksion3" id="kategori">
         <div class="kotak_kategori" data-aos="fade-in">
             <div class="imgk">
-                <img src="{{ asset ('images/image6.png') }}" alt="">
-                <p>Novel</p>
+                <a href=" #"><img src="{{ asset ('images/image6.png') }}" alt=""> </a>
+                <a href="/">Novel</a>
             </div>
             <div class="imgk">
-                <img src="{{ asset ('images/image7.png') }}" alt="">
-                <p>Philosophy</p>
+               <a href=" #"> <img  src="{{ asset ('images/image7.png') }}" alt="">  </a>
+                <a href="/">Philosophy</a>
             </div>
             <div class="imgk">
-                <img src="{{ asset ('images/image8.png') }}" alt="">
-                <p>Knowledge</p>
+                 <a href=" #"><img src="{{ asset ('images/image8.png') }}" alt=""> </a>
+                <a href="/">Knowledge</a>
             </div>
             <div class="imgk">
-                <img src="{{ asset ('images/image9.png') }}" alt="">
-                <p>Poem</p>
+                 <a href="#"><img src="{{ asset ('images/image9.png') }}" alt=""> </a>
+                <a href="/">Poem </a>
             </div>
             <div class="imgk">
-                <img src="{{ asset ('images/image10.png') }}" alt="">
-                <p>More</p>
+                 <a href="/catalog"><img src="{{ asset ('images/image10.png') }}" alt=""></a>
+                <a href="/catalog">More</a>
             </div>
         </div>
     </section>
@@ -188,7 +215,7 @@
         </div>
     </section>
 
-    <section class="seksion6">
+    <section class="seksion6" data-aos="fade-left">
         <div class="supanova">
             <div class="quotes">
                 <img src="{{ asset('images/supanova.png') }}" alt="">
@@ -208,7 +235,7 @@
 
     {{-- start --}}
 
-    <section class="seksion7 " data-aos="fade-out">
+    <section class="seksion7 " data-aos="fade-in" id="populer">
         <div class="popular">
             <div class="teks-pop">
 
@@ -219,24 +246,24 @@
                 </p>
             </div>
 
-            <div class="slide hi-slide">
+            <div class="slide hi-slide" data-aos="fade-out">
                 <div class="hi-prev"></div>
                 <div class="hi-next"></div>
                 <ul>
-                    <li><img src="{{ asset('images/buku1.png') }}" alt=""></li>
-                    <li><img src="{{ asset('images/buku1.png') }}" alt=""></li>
-                    <li><img src="{{ asset('images/buku1.png') }}" alt=""></li>
-                    <li><img src="{{ asset('images/buku1.png') }}" alt=""></li>
-                    <li><img src="{{ asset('images/buku1.png') }}" alt=""></li>
-                    <li><img src="{{ asset('images/buku1.png') }}" alt=""></li>
-                    <li><img src="{{ asset('images/buku1.png') }}" alt=""></li>
-                    <li><img src="{{ asset('images/buku1.png') }}" alt=""></li>
+                    <li><img src="{{ asset('images/bukubaru1.png') }}" alt=""></li>
+                    <li><img src="{{ asset('images/bukubaru2.png') }}" alt=""></li>
+                    <li><img src="{{ asset('images/bukubaru3.png') }}" alt=""></li>
+                    <li><img src="{{ asset('images/bukubaru1.png') }}" alt=""></li>
+                    <li><img src="{{ asset('images/bukubaru2.png') }}" alt=""></li>
+                    <li><img src="{{ asset('images/bukubaru3.png') }}" alt=""></li>
+                    <li><img src="{{ asset('images/bukubaru1.png') }}" alt=""></li>
+                    <li><img src="{{ asset('images/bukubaru2.png') }}" alt=""></li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <section class="faq-section">
+    <section class="faq-section" data-aos="fade-out">
         <h1 class="tittle">Frequenly Asked Question</h1>
         <ul class="faq">
             <li>

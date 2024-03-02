@@ -14,12 +14,12 @@ class CekLevel
      *
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
-    public function handle(Request $request, Closure $next, ...$level): Response
-    {   
+    public function handle(Request $request, Closure $next, ...$levels): Response
+    {
         $user = Auth::user();
-        if ($user->role == 'admin' || $user->role == 'petugas' ){
-            return $next($request);            
-        } 
+        if ($user->role == 'admin' || $user->role == 'petugas') {
+            return $next($request);
+        }
         session()->flush();
         return redirect()->route('login');
     }

@@ -31,7 +31,7 @@
             <div class="image-text">
                 <span class="image">
 
-                    <img src="{{ asset ('images/logo-dash.png') }}" alt="">
+                    <a href="/homepage"><img src="{{ asset ('images/logo-dash.png') }}" alt=""></a>
                 </span>
 
                 {{-- <div class="text logo-text">
@@ -52,9 +52,9 @@
 
                 <ul class="menu-links">
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="/homepage">
                             <i class='bx bx-home-alt icon'></i>
-                            <span class="text nav-text">Dashboard</span>
+                            <span class="text nav-text">Home</span>
                         </a>
                     </li>
 
@@ -75,16 +75,16 @@
                     <li class="nav-link">
                         <a href="#">
                             <i class='bx bx-archive-in icon'></i>
-                            <span class="text nav-text">Analytics</span>
+                            <span class="text nav-text">Save</span>
                         </a>
                     </li>
 
-                    <li class="nav-link">
+                    {{-- <li class="nav-link">
                         <a href="#">
                             <i class='bx bx-heart icon'></i>
                             <span class="text nav-text">Likes</span>
                         </a>
-                    </li>
+                    </li> --}}
 
                     {{-- <li class="nav-link">
                         <a href="#">
@@ -126,7 +126,7 @@
         <input type="search" class="search" placeholder="Search here">
         <div class="dashi">
             <div class="login">
-                <img src="{{ asset('images/iconamoon_profile-bold.png') }}" alt="">
+                <a href="/profil/{{ Auth::user()->id }}"><img src="{{ asset('images/iconamoon_profile-bold.png') }}" alt=""></a>
             </div>
         </div>
     </div>

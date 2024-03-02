@@ -342,6 +342,10 @@ body.dark .home .text {
     gap: 10rem;
 }
 
+.contain h1 {
+    font-family: 'Dela Gothic One';
+}
+
 .dashi {
     /* margin: 30px 90px; */
     align-items: center;
@@ -422,9 +426,18 @@ td{
 
 
 
+
+.add a:hover{
+    background-color: #C1DAFF;
+}
+
 td {
     background-color: #FFF;
     padding: 40px;
-
+    
     font-size: 15px;
+}
+
+td img {
+    width: 10rem;
 }

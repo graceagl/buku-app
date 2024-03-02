@@ -1,0 +1,149 @@
+body {
+    background-image: url(../images/bg-bulat.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    min-height: 90vh;
+
+}
+
+.main {
+    display: flex;
+    /* background-color: #eaeaea; */
+}
+
+form {
+    padding: 120px 320px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    border-radius: 40px;
+    box-shadow: 0px 4px 9px rgba(171, 144, 144, 0.5);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+.container {
+    max-width: 1160px;
+    /* background-color: rebeccapurple; */
+    margin: 0 auto;
+}
+
+.upload_hide {
+    /* position: absolute; */
+    /* max-width: 840px;
+    max-height: 540px;
+    width: 100%;
+    height: 100%; */
+    /* left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); */
+    z-index: 5;
+    opacity: 0;
+}
+
+.upload_label {
+    /* position: relative; */
+    max-width: 800px;
+    max-height: 500px;
+    width: 200px;
+    height: 300px;
+    /* margin: 20px !important; */
+    border: 2px dashed #139CFF;
+    /* left: 50%; */
+    /* top: 10%; */
+    /* transform: translate(-50%, -50%); */
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    border-radius: 8px;
+    flex-direction: column;
+}
+
+.choose_file {
+    width: 200px;
+    height: 50px;
+    border: none;
+    background-color: #139CFF;
+    color: #fff;
+    border-radius: 3px;
+    margin: 30px auto;
+    pointer-events: none;
+}
+
+.delete_file {
+    width: 200px;
+    height: 50px;
+    border: none;
+    background-color: #139CFF;
+    color: #fff;
+    border-radius: 3px;
+    /* margin: 30px auto; */
+    cursor: pointer;
+    z-index: 6;
+    /* position: absolute; */
+    /* top: 20%;
+    left: 51%;
+    transform: translate(-100%, -100%); */
+    outline: none;
+}
+
+
+.upload_label>i {
+    color: #77b7fc;
+    font-size: 50px;
+    margin: 10px 0;
+}
+
+.drag_text {
+    color: #139CFF;
+    font-size: 22px;
+    margin: 30px 0 0 0;
+}
+
+
+.image>img {
+    /* padding: 10px; */
+    width: 100%;
+    height: auto;
+    position: relative;
+    /* left: %; */
+    top: 40%;
+}
+
+.forin {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.forin input {
+    border-radius: 5px;
+    padding: 5px;
+    border: 1px solid rgb(101, 101, 101);
+}
+
+.forin textarea {
+
+    padding: 45px;
+}
+
+.forin a {
+    text-decoration: none;
+    width: 90px;
+
+    text-align: center;
+    color: #fff;
+    border: 1px solid rgb(101, 101, 101);
+    border-radius: 5px;
+    background-color: #77b7fc;
+}

@@ -37,7 +37,7 @@
         <button class="delete_file"> Delete File</button>
     </div>
     <div class="from">
-        <div class="forin">
+<div class="forin">
 
             <label  for="Judul">Judul</label>
             <input type="text" name="judul" placeholder="masukkan Judul">
@@ -69,7 +69,8 @@
         <br>
 
         <div class="forin">
-            <textarea name="dec" id="dec"></textarea>    
+            <label for="dec">Descrpition</label>
+            <textarea name="dec" id="dec" ></textarea>    
             <br>
             <button type="submit">Submit</button>
         </div> 

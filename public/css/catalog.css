@@ -302,7 +302,8 @@ body.dark .mode .sun-moon i.moon {
 }
 
 body.dark .switch::before {
-    left: 20px;
+    left: 0px;
+    
 }
 
 .home {

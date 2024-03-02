@@ -14,6 +14,10 @@
     
     <!--<title>Dashboard Sidebar Menu</title>--> 
 
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Aoboshi+One&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Dela+Gothic+One&family=Encode+Sans+Semi+Expanded:wght@600&family=Julius+Sans+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Poppins:ital,wght@0,200;0,300;1,200&family=Quattrocento&family=Quicksand:wght@300&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
@@ -46,46 +50,46 @@
 
                 <ul class="menu-links">
                     <li class="nav-link">
-                        <a href="#">
+                        <a href="/homepage">
                             <i class='bx bx-home-alt icon' ></i>
+                            <span class="text nav-text">Homepage</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="/dashboard">
+                            <i class='bx bx-bar-chart-alt-2 icon' ></i>
                             <span class="text nav-text">Dashboard</span>
                         </a>
                     </li>
 
                     {{-- <li class="nav-link">
                         <a href="#">
-                            <i class='bx bx-bar-chart-alt-2 icon' ></i>
-                            <span class="text nav-text">Revenue</span>
-                        </a>
-                    </li> --}}
-
-                    <li class="nav-link">
-                        <a href="#">
                             <i class='bx bx-bell icon'></i>
                             <span class="text nav-text">Notifications</span>
                         </a>
-                    </li>
+                    </li> --}}
 
-                    <li class="nav-link">
+                    {{-- <li class="nav-link">
                         <a href="#">
                            <i class='bx bx-archive-in icon' ></i>
                             <span class="text nav-text">Analytics</span>
                         </a>
-                    </li>
+                    </li> --}}
 
-                    <li class="nav-link">
+                    {{-- <li class="nav-link">
                         <a href="#">
                             <i class='bx bx-heart icon' ></i>
                             <span class="text nav-text">Likes</span>
                         </a>
-                    </li>
+                    </li> --}}
 
-                    <li class="nav-link">
+                    {{-- <li class="nav-link">
                         <a href="#">
                             <i class='bx bx-wallet icon' ></i>
                             <span class="text nav-text">Wallets</span>
                         </a>
-                    </li>
+                    </li> --}}
 
                 </ul>
             </div>
@@ -117,7 +121,7 @@
 
     <section class="home">
         <div class="contain">
-            <h1>Staff</h1>
+            <h1>User</h1>
             <input type="search" class="search" placeholder="Search here">
             <div class="dashi">
                 <div class="login">
