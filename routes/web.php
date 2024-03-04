@@ -70,3 +70,17 @@ Route::get('/kolekuk', [App\Http\Controllers\BookController::class, 'koleku'])->
 Route::get('/profil/edit/{id}', [App\Http\Controllers\BookController::class, 'editp'])->name('editt');
 
 Route::put('/profil/edit/{id}/proses', [App\Http\Controllers\BookController::class, 'renew'])->name('reneu');
+
+Route::post('/buku/proses/peminjaman/{id}', [App\Http\Controllers\BookController::class, 'pinjem'])->name('pinjam');
+
+Route::get('/buku/peminjaman/{id}', [App\Http\Controllers\BookController::class, 'showpinjam'])->name('showpinjam');
+
+Route::get('/daftarpinjam', [App\Http\Controllers\BookController::class, 'datapinjam'])->name('datapinjam');
+
+Route::post('/detail/{id}/ulasan', [App\Http\Controllers\BookController::class, 'komen'])->name('komen');
+
+Route::get('/laporanpeminjam', [App\Http\Controllers\BookController::class, 'showlaporan'])->name('laporan');
+Route::get('/cetaklaporan', [App\Http\Controllers\BookController::class, 'cetaklaporan'])->name('cetaklaporan');
+
+
+

@@ -136,19 +136,23 @@
                 <th>Buku</th>
                 <th>Tanggal Peminjaman</th>
                 <th>Tanggal Pengembalian</th>
-                
+                <th>Status</th>
+                {{-- <th>Action</th> --}}
             
             </tr>
-            @foreach ($petugas as $tampil)
+            @foreach ($daftar as $tampil)
 
             <tr>
                 <td>{{ $loop->iteration }}</td>
-                <td>{{ $tampil->name }}</td>
-                <td>{{ $tampil->email }}</td>
-                <td>{{ $tampil->created_at }}</td>
+                {{-- <td>{{ $tampil->buku->judul }}</td> --}}
+                <td>{{ $tampil->buku['judul'] }}</td>
+                <td>{{ $tampil->tanggalpeminjaman }}</td>
+                <td>{{ $tampil->tanggalpengembalian }}</td>
+                <td>{{ $tampil->status }}</td>
                 
-                <td style="display: flex; gap:50px; justify-content:center;">
+                {{-- <td style="display: flex; gap:50px; justify-content:center;">
                  
+                    <a href="/edit/{{ $tampil->id }}"><i class="bi bi-pencil"></i></a>
                     <form action="/delete/{{ $tampil ->id }}" method="post">
                         @csrf
                         @method("DELETE")
@@ -156,7 +160,7 @@
                         </i></button>
                     </form>
 
-                </td>
+                </td> --}}
             </tr>
             @endforeach
         </table>

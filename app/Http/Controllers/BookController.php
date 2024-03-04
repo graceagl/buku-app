@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\simpan;
 use Illuminate\Http\Request;
 use App\Models\Book;
+use App\Models\Peminjaman;
+use App\Models\Ulasan;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class BookController extends Controller
@@ -62,6 +65,12 @@ class BookController extends Controller
         return redirect('/buku');
     }
 
+    public function edit($id)
+    {   
+        $show = Book::find($id);
+        return view('bubuku.update', compact('show'));
+    }
+
 
     public function renew(Request $request, $id)
     {
@@ -73,10 +82,9 @@ class BookController extends Controller
 
        ]);
 
-    //    $editp->save();
+       $editp->save();
        return redirect('/profil/{id}');
     }
-
 
 
 
@@ -135,10 +143,32 @@ class BookController extends Controller
         return view('bubuku.catalog', compact('buku'));
     }
 
+    // public function pinjem()
+    // {
+    //     $buku = Book::all();
+    //     return view('bubuku.catalog', compact('buku'));
+    // }
+
     public function jelax($id)
     {
         $b = Book::find($id);
-        return view('bubuku.detail', compact('b'));
+        $ulasan = Ulasan::all();
+        return view('bubuku.detail', compact('b', 'ulasan'));
+    }
+
+    //Input Komen
+    public function komen(Request $request, $id){
+        $user = Auth::user()->id;
+        
+        $ulasan = new Ulasan([
+            'userID' => $user,
+            'bukuID' => $id,
+            'ulasan' => $request['ulasan'],
+            'rating' => $request['rating'],
+        ]);
+
+        $ulasan->save();
+        return redirect()->route('detail', ['id' => $id]);
     }
 
     public function bio()
@@ -154,8 +184,8 @@ class BookController extends Controller
 
     public function editp($id)
     {   
-        $c = User::find($id);
-        return view('bubuku.editprofil');
+        $c = Auth::user()->id;
+        return view('bubuku.editprofil', compact('c'));
     }
 
 
@@ -182,5 +212,49 @@ class BookController extends Controller
         }
     }
 
+    //menampilkan form tgl pengembalian
+    public function showpinjam($id){
+        $buku = Book::find($id);
+        return view('bubuku.pengembalian', compact('buku'));
+    }
+
+    //proses penginputan data peminjaman
+    public function pinjem(Request $request, $id){
+        $user = Auth::user()->id;
+
+        $pinjam = new Peminjaman([
+            'userID' => $user,
+            'bukuID' => $id,
+            'tanggalpeminjaman' => now()->toDateString(),
+            'tanggalpengembalian' => $request['tglbalik'],
+            'status' => 'Dipinjam',
+        ]);
+
+        $pinjam->save();
+        return redirect()->route('catalog', ['id' => $id]);
+    }
+
+    //menampilkan data peminjaman
+    public function datapinjam(){
+        $user = Auth::user();
+        $book = Book::all();
+        $daftar = $user->peminjamans()->where('status', 'Dipinjam')->get();
+
+        return view('bubuku.datapeminjaman', compact('daftar'));
+    }
+
+    public function showlaporan(){
+        $book = Book::all();
+        $dtpeminjam = Peminjaman::all();
+
+        return view('bubuku.dtpeminjam', compact('dtpeminjam'));
+    }
+
+    public function cetaklaporan(){
+        $book = Book::all();
+        $dtpeminjam = Peminjaman::all();
+
+        return view('bubuku.cetakdata', compact('dtpeminjam'));
+    }
 
 }

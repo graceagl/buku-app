@@ -167,9 +167,26 @@
                         <p>{{ $b->dec }}</p>
                     </div>
                     <br>
-                    <textarea name="coment" id="coment" cols="30" rows="10"> Comentar</textarea>
+                    <form action="/detail/{{ $b->id }}/ulasan" method="post">
+                        @csrf
+                        <textarea name="ulasan" id="komen" cols="30" rows="10"></textarea>
+                        <select name="rating" id="">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <button type="submit">Kirim</button>
+                    </form>
                     <div class="Book-detail">
-                        
+                        @foreach ($ulasan as $u)
+                            <h1>{{ $u->user['name'] }}</h1>
+                            <p>{{ $u->ulasan }}</p>
+                        @endforeach
+                        <div class="ulasan">
+
+                        </div>
                     </div>
 
                 </div>

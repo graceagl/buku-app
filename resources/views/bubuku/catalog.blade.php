@@ -152,7 +152,7 @@
                 <div class="name">
                     <h3>Dont Make me Think</h3>
                     <p>grace angelika, 2005 <br> 4/5</p>
-                    <a class="a" href="">Borrow</a>
+                    <a class="a" href="/buku/peminjaman/{{ $b->id }}">Borrow</a>
 
                     <a class="b" href="/detail/{{ $b->id }}">Detail</a>
                 </div>

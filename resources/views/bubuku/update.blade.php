@@ -68,7 +68,7 @@
         <br>
 
         <div class="forin">
-            <textarea name="dec" id="dec"></textarea>    
+            <textarea name="dec" id="dec">{{ $show->dec }}</textarea>    
             <br>
             <button type="submit">Submit</button>
         </div> 
