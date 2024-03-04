@@ -82,5 +82,15 @@ Route::post('/detail/{id}/ulasan', [App\Http\Controllers\BookController::class, 
 Route::get('/laporanpeminjam', [App\Http\Controllers\BookController::class, 'showlaporan'])->name('laporan');
 Route::get('/cetaklaporan', [App\Http\Controllers\BookController::class, 'cetaklaporan'])->name('cetaklaporan');
 
+// Route::get('/daftarpinjamu', [App\Http\Controllers\BookController::class, 'datapinjamu'])->name('datapinjamu');
+
+//
+
+
+Route::resource('/users', BookController::class);
+
+//Route search
+Route::get('/search', [BookController::class, 'search'])->name('search');
+
 
 

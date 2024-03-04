@@ -73,18 +73,31 @@
                     </li> --}}
 
                     <li class="nav-link">
-                        <a href="#">
-                            <i class='bx bx-archive-in icon'></i>
-                            <span class="text nav-text">Save</span>
+                        <a href="/catalog">
+                            <i class='bx bx-bar-chart-alt-2 icon'></i>
+                            <span class="text nav-text">Catalog</span>
                         </a>
                     </li>
 
-                    {{-- <li class="nav-link">
-                        <a href="#">
+                    <li class="nav-link">
+                        <a href="/kolekuk">
                             <i class='bx bx-heart icon'></i>
                             <span class="text nav-text">Likes</span>
                         </a>
-                    </li> --}}
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="/daftarpinjam">
+                            <i class='bx bx-archive-in icon'></i>
+                            <span class="text nav-text">Borrowed</span>
+                        </a>
+                    </li>
+
+
+
+
+
+                    {{-- --}}
 
                     {{-- <li class="nav-link">
                         <a href="#">
@@ -98,9 +111,16 @@
 
             <div class="bottom-content">
                 <li class="">
-                    <a href="#">
+
+                    <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
                         <i class='bx bx-log-out icon'></i>
                         <span class="text nav-text">Logout</span>
+
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+
                     </a>
                 </li>
 
@@ -123,6 +143,26 @@
 
     <div class="contain">
         <h1>Collection</h1>
+
+        <!-- <form class="form" method="get" action="{{ route('search') }}">
+        <div class="form-group w-100 mb-3">
+             <label for="search" class="d-block mr-2">Pencarian</label>
+            <input type="text" name="search" class="form-control w-75 d-inline" id="search" placeholder="Masukkan keyword">
+            <button type="submit" class="btn btn-primary mb-1">Cari</button>
+          </div>
+        </form> -->
+
+
+
+
+        @if ($message = Session::get('success'))
+        <div class="alert alert-success">
+            <p>{{ $message }}</p>
+        </div>
+        @endif
+
+
+
         <input type="search" class="search" placeholder="Search here">
         <div class="dashi">
             <div class="login">
@@ -136,7 +176,7 @@
     <div class="mainn">
 
         <div class="hello">
-            <h1>Hello, You!</h1>
+            <h1>Hello, {{ Auth::user()->name }} !!</h1>
             <p>All Books</p>
         </div>
 

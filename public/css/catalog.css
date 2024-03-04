@@ -435,7 +435,7 @@ td {
 .hello{
     
     padding: 30px;
-    margin-left: 170px;
+    margin-left: 120px;
     /* margin-top: 100px;         */
     font-family: 'Dela Gothic One',sans-serif;
     font-size: 30px;
@@ -459,7 +459,7 @@ td {
 }
 
 .mmg{
-    width: 10rem;
+    width: 9rem;
 }
 
 .utama {
@@ -477,7 +477,7 @@ td {
 }
 
 .name p{
-    font-size: 10px;
+    font-size: 12px;
     margin: 5px;
 }
 

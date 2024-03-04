@@ -39,6 +39,11 @@ body {
 
 }
 
+.btn-link {
+    color: black;
+    text-decoration: none;
+}
+
 .card1 h1 {
     font-size: 65px;
     margin-top: 0px;

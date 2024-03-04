@@ -8,6 +8,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css2?family=Aoboshi+One&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Dela+Gothic+One&family=Encode+Sans+Semi+Expanded:wght@600&family=Julius+Sans+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Poppins:ital,wght@0,200;0,300;1,200&family=Quattrocento&family=Quicksand:wght@300&display=swap" rel="stylesheet">
 
 
@@ -71,11 +72,17 @@
                             <span class="text nav-text">Notifications</span>
                         </a>
                     </li> --}}
-
                     <li class="nav-link">
                         <a href="/kolekuk">
+                            <i class='bx bx-heart icon'></i>
+                            <span class="text nav-text">Likes</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="/">
                             <i class='bx bx-archive-in icon'></i>
-                            <span class="text nav-text">Collection</span>
+                            <span class="text nav-text">Borrowed</span>
                         </a>
                     </li>
 
@@ -121,15 +128,15 @@
 
     </nav>
     {{-- <section class="home"> --}}
-        <div class="contain">
-            <a href="/catalog"><i class="bi bi-arrow-left"></i> Back</a>
-            <input type="search" class="search" placeholder="Search here">
-            <div class="dashi">
-                <div class="login">
-                    <img src="{{ asset('images/iconamoon_profile-bold.png') }}" alt="">
-                </div>
+    <div class="contain">
+        <a href="/catalog"><i class="bi bi-arrow-left"></i> Back</a>
+        <input type="search" class="search" placeholder="Search here">
+        <div class="dashi">
+            <div class="login">
+                <img src="{{ asset('images/iconamoon_profile-bold.png') }}" alt="">
             </div>
         </div>
+    </div>
 
     </section>
 
@@ -145,8 +152,8 @@
                     </div>
                     <div class="borrow">
 
-                        <a href="">Borrow</a>
-                        <form action="/simpan/{{$b->id}}" method="post"  >
+                        <a class="a" href="/buku/peminjaman/{{ $b->id }}">Borrow</a>
+                        <form action="/simpan/{{$b->id}}" method="post">
                             @csrf
                             <button type="submit" class="btn">
                                 <i class="bi bi-box2-heart-fill"></i>
@@ -181,8 +188,8 @@
                     </form>
                     <div class="Book-detail">
                         @foreach ($ulasan as $u)
-                            <h1>{{ $u->user['name'] }}</h1>
-                            <p>{{ $u->ulasan }}</p>
+                        <h1>{{ $u->user['name'] }}</h1>
+                        <p>{{ $u->ulasan }}</p>
                         @endforeach
                         <div class="ulasan">
 

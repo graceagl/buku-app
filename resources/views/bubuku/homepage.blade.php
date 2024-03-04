@@ -8,8 +8,9 @@
     
 
     <title>Document</title> --}}
-    <!doctype html>
+<!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,7 +20,8 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Fonts -->    <link rel="dns-prefetch" href="//fonts.bunny.net">
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.bunny.net">
 
     <link rel="stylesheet" href="{{ asset('/css/swiper-bundle.min.css') }}">
     <link rel="stylesheet" href="{{ asset ('/public/js/main.js')}}">
@@ -71,15 +73,15 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                            @auth 
-                                @if (Auth::user()->role==='admin'||Auth::user()->role==='petugas')
-                                   <a href="/dashboard">Dashboard || </a>
-                                @else
-                                    <a href="/profil/{{ Auth::user()->id }}">
-                                        Profil ||
-                                    </a>
-                                @endif
-                                @endauth
+                            @auth
+                            @if (Auth::user()->role==='admin'||Auth::user()->role==='petugas')
+                            <a href="/dashboard">Dashboard || </a>
+                            @else
+                            <a href="/profil/{{ Auth::user()->id }}">
+                                Profil ||
+                            </a>
+                            @endif
+                            @endauth
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
@@ -144,19 +146,19 @@
                 <a href="/">Novel</a>
             </div>
             <div class="imgk">
-               <a href=" #"> <img  src="{{ asset ('images/image7.png') }}" alt="">  </a>
+                <a href=" #"> <img src="{{ asset ('images/image7.png') }}" alt=""> </a>
                 <a href="/">Philosophy</a>
             </div>
             <div class="imgk">
-                 <a href=" #"><img src="{{ asset ('images/image8.png') }}" alt=""> </a>
+                <a href=" #"><img src="{{ asset ('images/image8.png') }}" alt=""> </a>
                 <a href="/">Knowledge</a>
             </div>
             <div class="imgk">
-                 <a href="#"><img src="{{ asset ('images/image9.png') }}" alt=""> </a>
+                <a href="#"><img src="{{ asset ('images/image9.png') }}" alt=""> </a>
                 <a href="/">Poem </a>
             </div>
             <div class="imgk">
-                 <a href="/catalog"><img src="{{ asset ('images/image10.png') }}" alt=""></a>
+                <a href="/catalog"><img src="{{ asset ('images/image10.png') }}" alt=""></a>
                 <a href="/catalog">More</a>
             </div>
         </div>
@@ -174,42 +176,44 @@
         <div class="recomendation">
             <div class="imgkk">
                 <img src="{{ asset ('images/ikigay.png') }}" alt="">
-                <p>Novel <br>
+                <p>IKIGAI <br>
                     <span class="lor">
-                        Lorem ipsum lorem imys <br>
-                        Lorem Lorem ipsum</span>
+                        pelajari rahasia hidup orang <br>
+                        jepang umur panjang</span>
                 </p>
             </div>
             <div class="imgkk">
                 <img src="{{ asset ('images/coba.png') }}" alt="" class="filo">
-                <p>Novel <br>
+                <p>FILOSOFI TERAS <br>
                     <span class="lor">
-                        Lorem ipsum lorem imys <br>
-                        Lorem Lorem ipsum</span>
+                        miliki cara hidup untuk lebih tenang <br>
+                        dengan menjadi stoicsm
+                    </span>
                 </p>
             </div>
             <div class="imgkk">
                 <img src="{{ asset ('images/ikigay.png') }}" alt="">
-                <p>Novel <br>
+                <p>IKIGAI <br>
                     <span class="lor">
-                        Lorem ipsum lorem imys <br>
-                        Lorem Lorem ipsum</span>
+                        pelajari rahasia hidup orang <br>
+                        jepang umur panjang</span>
                 </p>
             </div>
             <div class="imgkk">
                 <img src="{{ asset ('images/filo.png') }}" alt="" class="filo">
-                <p>Novel <br>
+                <p>FILOSOFI TERAS <br>
                     <span class="lor">
-                        Lorem ipsum lorem imys <br>
-                        Lorem Lorem ipsum</span>
+                        miliki cara hidup untuk lebih tenang <br>
+                        dengan menjadi stoicsm
+                    </span>
                 </p>
             </div>
             <div class="imgkk">
                 <img src="{{ asset ('images/ikigay.png') }}" alt="">
-                <p>Novel <br>
+                <p>IKIGAI <br>
                     <span class="lor">
-                        Lorem ipsum lorem imys <br>
-                        Lorem Lorem ipsum</span>
+                        pelajari rahasia hidup orang <br>
+                        jepang umur panjang</span>
                 </p>
             </div>
         </div>
@@ -241,8 +245,8 @@
 
                 <h3>Popular</h3>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur,<br>
-                    adipisicing elit. Consequatur, laudantium iste?
+                    our popular book<br>
+                    a lot of people already read it <br> you have to join one of them
                 </p>
             </div>
 
@@ -269,7 +273,7 @@
             <li>
                 <div class="q">
                     <span class="arrow"></span>
-                    <span>How do i replay?</span>
+                    <span>What is B00K</span>
                 </div>
                 <div class="a">
                     <p>
@@ -281,11 +285,11 @@
             <li>
                 <div class="q">
                     <span class="arrow"></span>
-                    <span>How do i replay?</span>
+                    <span>How can Borrow?</span>
                 </div>
                 <div class="a">
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto id unde veniam possimus nesciunt laborum dolor repellendus cum consectetur iure.
+                        Find your book that you want, Then Click the Borrow Button
                     </p>
                 </div>
             </li>
@@ -293,11 +297,11 @@
             <li>
                 <div class="q">
                     <span class="arrow"></span>
-                    <span>How do i replay?</span>
+                    <span>How Do i Give the Comment ?</span>
                 </div>
                 <div class="a">
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto id unde veniam possimus nesciunt laborum dolor repellendus cum consectetur iure.
+                        Your comment will be our Motivation for better, go to the detail and find Comment Section There
                     </p>
                 </div>
             </li>

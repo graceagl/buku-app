@@ -47,8 +47,8 @@ class BookController extends Controller
         return redirect('/buku');
     }
 
- 
-    
+
+
 
 
     //untuk proses update
@@ -60,13 +60,14 @@ class BookController extends Controller
         $show->penulis = $request->input('penulis');
         $show->penerbit = $request->input('penerbit');
         $show->tahun_penerbit = $request->input('thn');
+        $show->dec = $request->input('dec');
 
         $show->save();
         return redirect('/buku');
     }
 
     public function edit($id)
-    {   
+    {
         $show = Book::find($id);
         return view('bubuku.update', compact('show'));
     }
@@ -74,17 +75,20 @@ class BookController extends Controller
 
     public function renew(Request $request, $id)
     {
-       $editp = User::find($id)->update([
-        'name'=> $request['name'],
-        'username'=> $request['username'],
-        'alamat'=> $request['alamat'],
-        'email'=> $request['email'],
+        $editp = User::find($id)->update([
+            'gambar' => $request['gambar'],
+            'name' => $request['name'],
+            'username' => $request['username'],
+            'alamat' => $request['alamat'],
+            'email' => $request['email'],
 
-       ]);
 
-       $editp->save();
-       return redirect('/profil/{id}');
+        ]);
+
+        $editp->save();
+        return redirect('/profil/{id}');
     }
+
 
 
 
@@ -131,7 +135,7 @@ class BookController extends Controller
             'role' => $request['role'],
         ]);
 
-        $petugas->save();
+        // $petugas->save();
 
         return redirect()->route('datap');
     }
@@ -157,9 +161,10 @@ class BookController extends Controller
     }
 
     //Input Komen
-    public function komen(Request $request, $id){
+    public function komen(Request $request, $id)
+    {
         $user = Auth::user()->id;
-        
+
         $ulasan = new Ulasan([
             'userID' => $user,
             'bukuID' => $id,
@@ -183,16 +188,20 @@ class BookController extends Controller
     }
 
     public function editp($id)
-    {   
+    {
         $c = Auth::user()->id;
+
         return view('bubuku.editprofil', compact('c'));
     }
 
 
 
-    public function store($id){
+
+
+    public function store($id)
+    {
         $book = Book::find($id);
-        
+
         $user = auth()->user();
 
         $existingBookmark = simpan::where('book_id', $book->id)
@@ -213,13 +222,15 @@ class BookController extends Controller
     }
 
     //menampilkan form tgl pengembalian
-    public function showpinjam($id){
+    public function showpinjam($id)
+    {
         $buku = Book::find($id);
         return view('bubuku.pengembalian', compact('buku'));
     }
 
     //proses penginputan data peminjaman
-    public function pinjem(Request $request, $id){
+    public function pinjem(Request $request, $id)
+    {
         $user = Auth::user()->id;
 
         $pinjam = new Peminjaman([
@@ -235,7 +246,8 @@ class BookController extends Controller
     }
 
     //menampilkan data peminjaman
-    public function datapinjam(){
+    public function datapinjam()
+    {
         $user = Auth::user();
         $book = Book::all();
         $daftar = $user->peminjamans()->where('status', 'Dipinjam')->get();
@@ -243,18 +255,28 @@ class BookController extends Controller
         return view('bubuku.datapeminjaman', compact('daftar'));
     }
 
-    public function showlaporan(){
+    public function showlaporan()
+    {
         $book = Book::all();
         $dtpeminjam = Peminjaman::all();
 
         return view('bubuku.dtpeminjam', compact('dtpeminjam'));
     }
 
-    public function cetaklaporan(){
+    public function cetaklaporan()
+    {
         $book = Book::all();
         $dtpeminjam = Peminjaman::all();
 
         return view('bubuku.cetakdata', compact('dtpeminjam'));
     }
 
+
+    //
+    public function search(Request $request)
+    {
+        $keyword = $request->search;
+        $users = Book::where('judul', 'penulis', $keyword)->paginate(2);
+        return redirect()->route('catalog')->with('i', (request()->input('page', 1) - 1) * 5);
+    }
 }
