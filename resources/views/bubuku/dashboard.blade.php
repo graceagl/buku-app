@@ -63,9 +63,9 @@
                     </li>
 
                     <li class="nav-link">
-                        <a href="/dashboard">
+                        <a href="/laporanpeminjam">
                             <i class='bx bx-bar-chart-alt-2 icon'></i>
-                            <span class="text nav-text">Dashboard</span>
+                            <span class="text nav-text">Report</span>
                         </a>
                     </li>
 

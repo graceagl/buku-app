@@ -49,6 +49,19 @@ body.dark {
     --text-color: #ccc;
 }
 
+.addg {
+    
+}
+
+/* #cetak  {
+    display: flex;
+    margin-left: 2rem;
+    justify-content: end;
+    margin-left: 4rem;
+    padding: 2rem;
+} */
+
+
 /* ===== Sidebar ===== */
 .sidebar {
     position: fixed;

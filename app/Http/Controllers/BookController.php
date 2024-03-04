@@ -257,10 +257,11 @@ class BookController extends Controller
 
     public function showlaporan()
     {
+        $user = User::all();
         $book = Book::all();
         $dtpeminjam = Peminjaman::all();
 
-        return view('bubuku.dtpeminjam', compact('dtpeminjam'));
+        return view('bubuku.dtpeminjam', compact('dtpeminjam', 'book', 'user'));
     }
 
     public function cetaklaporan()

@@ -139,6 +139,7 @@
 
             <tr class="tabel">
                 <th>No.</th>
+                <th>Username</th>
                 <th>Buku</th>
                 <th>Tanggal Peminjaman</th>
                 <th>Tanggal Pengembalian</th>
@@ -150,7 +151,8 @@
 
             <tr>
                 <td>{{ $loop->iteration }}</td>
-                {{-- <td>{{ $tampil->buku->judul }}</td> --}}
+
+                <td>{{ $tampil->user['name'] }}</td>
                 <td>{{ $tampil->buku['judul'] }}</td>
                 <td>{{ $tampil->tanggalpeminjaman }}</td>
                 <td>{{ $tampil->tanggalpengembalian }}</td>

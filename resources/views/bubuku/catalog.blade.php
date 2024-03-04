@@ -99,12 +99,12 @@
 
                     {{-- --}}
 
-                    {{-- <li class="nav-link">
-                        <a href="#">
-                            <i class='bx bx-wallet icon' ></i>
+                    <li class="nav-link">
+                        <a href="/daftarpinjam">
+                            <i class='bx bx-wallet icon'></i>
                             <span class="text nav-text">Wallets</span>
                         </a>
-                    </li> --}}
+                    </li>
 
                 </ul>
             </div>

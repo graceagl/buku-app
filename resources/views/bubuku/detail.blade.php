@@ -80,7 +80,7 @@
                     </li>
 
                     <li class="nav-link">
-                        <a href="/">
+                        <a href="/daftarpinjam">
                             <i class='bx bx-archive-in icon'></i>
                             <span class="text nav-text">Borrowed</span>
                         </a>
